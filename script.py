@@ -14,7 +14,6 @@ def fetch_top_50_cryptos():
     sorted_tickers = sorted(tickers, key=lambda x: float(x['quoteVolume']), reverse=True)
     sorted_tickers = [ticker for ticker in sorted_tickers if ticker['symbol'].endswith('USDT')][:50]
 
-    # Extract relevant fields
     data = [{
         "Name": ticker['symbol'].replace('USDT', ''),  
         "Symbol": ticker['symbol'],
